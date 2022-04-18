@@ -23,6 +23,10 @@ func New(dataStartLine int) *Decoder {
 	return &Decoder{dataStartLine: dataStartLine}
 }
 
+func (d *Decoder) ResetHeader() {
+	d.header = nil
+}
+
 func (d *Decoder) WithHeader(header []string) *Decoder {
 	d.header = make(map[string]int)
 	for i, h := range header {
