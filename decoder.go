@@ -129,7 +129,7 @@ func (d *Decoder) unMarshal(row []string, beanT reflect.Type) (beanR reflect.Val
 			continue
 		}
 		if tag := fileT.Tag.Get("csv"); tag != "" {
-			if tag == "-" {
+			if strings.HasPrefix(tag, "-") {
 				continue
 			}
 			index, ok = d.header[tag]
