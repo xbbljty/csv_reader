@@ -1,4 +1,4 @@
-package main
+package csv_reader
 
 import (
 	"reflect"
